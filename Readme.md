@@ -5,7 +5,7 @@ TridentTD_EasyFreeRTOS32 Library
 ไลบรารี่สำหรับ ควบคุม ไฟจราจร เขียว เหลือง แดง 
 
 <p align="center">
-  <img src="Picture.png" alt="image"/>
+  <img src="trafficlights.jpg" alt="image"/>
 </p>  
 
 ### วิธีการใช้งาน  

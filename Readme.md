@@ -18,13 +18,17 @@ TridentTD_EasyFreeRTOS32 Library
 ```c  
      TridentTD_TrafficLight  traffic1( 14,15,18);  // ขา Green, Yellow, Red
 ```
-3. หากจะเรียก ไฟไหนทำงาน ไฟอื่นดับหมด ให้เรียก  
+3. เริ่มต้นใช้งาน traffic  
+```c  
+     traffic1.begin();
+```
+4. หากจะเรียก ไฟไหนทำงาน ไฟอื่นดับหมด ให้เรียก  
 ```c
      traffic1.Green();    // ไฟเขียวทำงาน   ไฟอื่นดับหมด
      traffic1.Yellow();   // ไฟเหลืองทำงาน  ไฟอื่นดับหมด
      traffic1.Red();      // ไฟแดงทำงาน    ไฟอื่นดับหมด
 ```
-4. หากจะปิดไฟหมดทุกดวง
+5. หากจะปิดไฟหมดทุกดวง
 ```c
      traffic1.turnoff();
 ```

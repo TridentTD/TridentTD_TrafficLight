@@ -2,7 +2,7 @@ TridentTD_EasyFreeRTOS32 Library
 ===
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-ไลบรารี่สำหรับ เขียนแบบ Multitasking แบบ TridentTD บนเพรตฟอร์ม ESP32  
+ไลบรารี่สำหรับ ควบคุม ไฟจราจร เขียว เหลือง แดง 
 
 <p align="center">
   <img src="Picture.png" alt="image"/>
@@ -12,46 +12,23 @@ TridentTD_EasyFreeRTOS32 Library
 
 1. เรียกใช้ไลบรารี่  
 ```c  
-     #include <TridentTD_EasyFreeRTOS32.h>
+     #include <TridentTD_TrafficLight.h>
 ``` 
-2. ประกาศตัวแปร task ย่อยๆ และ ฟังกชั่น ที่ task จะเรียกขึ้นทำงาน  
+2. ประกาศตัวแปร traffic พร้อมกำหนดขา pin  
 ```c  
-     EasyFreeRTOS32  task1, task2, task3;
-     void task1_func(void*), task2_func(void*), task3_func(void*);
+     TridentTD_TrafficLight  traffic1( 14,15,18);  // ขา Green, Yellow, Red
 ```
-3. รูปแบบมาตรฐาน ฟังก์ชั่น task ย่อยๆ ที่จะถูกเรียกใช้งาน เป็นดังนี้  
+3. หากจะเรียก ไฟไหนทำงาน ไฟอื่นดับหมด ให้เรียก  
 ```c
-    void task1_func(void*)  {   // ฟังกชั่นที่ task1 เรียกทำงาน  - void ใช้ตัวพิมพ์เล็ก
-          //----พื้นที่สำหรับประกาศตัวแปรที่ใช้ภายใน task นี้เท่านั้น----
-
-          //-----------------------------------------------
-
-          VOID SETUP() {  // VOID SETUP() ใน task ให้ใช้ตัวพิมพ์ใหญ่
-
-          }
-          VOID LOOP() {   // VOID LOOP() ใน task ให้ใช้ตัวพิมพ์ใหญ่
-
-          }
-    }
-
+     traffic1.Green();    // ไฟเขียวทำงาน   ไฟอื่นดับหมด
+     traffic1.Yellow();   // ไฟเหลืองทำงาน  ไฟอื่นดับหมด
+     traffic1.Red();      // ไฟแดงทำงาน    ไฟอื่นดับหมด
 ```
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-**หมายเหตุ**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-ภายในฟังกชั่น task ให้ใช้ delay ด้วยคำสั่ง DELAY(..) ตัวพิมพ์ใหญ่เท่านั้น  
-
-4. หากจะเรียก task ไหนทำงาน เช่น สำหรับ task1 ใช้คำสั่ง  
+4. หากจะปิดไฟหมดทุกดวง
 ```c
-     task1.start(task1_func);
+     traffic1.turnoff();
 ```
-5. หากจะหยุด task ไหนทำงาน เช่น สำหรับ task1 ใช้คำสั่ง  
-```c
-     task1.stop();
-```
-6. หากจะใช้งานต่อ task ไหนทำงาน เช่น สำหรับ task1 ใช้คำสั่ง  
-```c
-     task1.resume();
-```
+
 -----
 **TridentTD**  
-24 พฤษภาคม 2561 (ปีแห่งฤดูฝนตกชุก)  
+6 มิถุนายน 2561 (ปีแห่งฤดูฝนตกชุก)  

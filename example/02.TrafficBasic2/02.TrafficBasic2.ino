@@ -13,7 +13,7 @@ void loop(){
 	delay(9000);
 	traffic1.Yellow(); traffic2.Yellow();
 	delay(1000);
-	traffic1.Red();		 traffic2.Green();
+	traffic1.Red();	   traffic2.Green();
 	delay(9000);
 	traffic1.Yellow(); traffic2.Yellow();
 	delay(1000);

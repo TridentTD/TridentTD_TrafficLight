@@ -1,4 +1,4 @@
-TridentTD_EasyFreeRTOS32 Library
+TridentTD_TrafficLight Library
 ===
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

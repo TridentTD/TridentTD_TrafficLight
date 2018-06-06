@@ -14,5 +14,6 @@ void loop(){
 	traffic1.Red();     // ไฟแดงติดนอกนั้นดับหมด
 	delay(3000);
 	traffic1.turnoff(); // ไฟดับหมด
+	delay(5000);
 }
 
